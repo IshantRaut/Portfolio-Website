@@ -58,44 +58,56 @@ const Contact = () => {
 
         {/* Contact Form */}
         <form
-          name="contact"
-          netlify
-          className="md:w-2/3 w-full bg-gray-900 p-8 md:p-10 rounded-2xl shadow-lg"
-        >
-          <h3 className="text-white text-3xl font-semibold mb-4">Hire Me</h3>
-          <p className="text-gray-400 mb-6">
-  I'm currently open to exciting opportunities where I can contribute my skills and grow as a developer. Whether you're looking to hire for a full-time role or a freelance project — let's connect and create something impactful!
-</p>
-          <label className="block mb-4">
-            <span className="text-gray-300 text-sm">Name</span>
-            <input
-              type="text"
-              name="name"
-              className="mt-1 block w-full rounded-md bg-gray-800 border border-gray-700 text-white px-4 py-2 focus:ring-2 focus:ring-indigo-600"
-            />
-          </label>
-          <label className="block mb-4">
-            <span className="text-gray-300 text-sm">Email</span>
-            <input
-              type="email"
-              name="email"
-              className="mt-1 block w-full rounded-md bg-gray-800 border border-gray-700 text-white px-4 py-2 focus:ring-2 focus:ring-indigo-600"
-            />
-          </label>
-          <label className="block mb-6">
-            <span className="text-gray-300 text-sm">Message</span>
-            <textarea
-              name="message"
-              className="mt-1 block w-full rounded-md bg-gray-800 border border-gray-700 text-white px-4 py-2 h-32 resize-none focus:ring-2 focus:ring-indigo-600"
-            />
-          </label>
-          <button
-            type="submit"
-            className="bg-indigo-600 hover:bg-indigo-700 transition text-white font-medium py-2 px-6 rounded-md"
-          >
-            Send Message
-          </button>
-        </form>
+  name="contact"
+  method="POST"
+  data-netlify="true"
+  className="md:w-2/3 w-full bg-gray-900 p-8 md:p-10 rounded-2xl shadow-lg"
+>
+  {/* Hidden input for Netlify to recognize the form */}
+  <input type="hidden" name="form-name" value="contact" />
+
+  <h3 className="text-white text-3xl font-semibold mb-4">Hire Me</h3>
+  <p className="text-gray-400 mb-6">
+    I'm currently open to exciting opportunities where I can contribute my skills and grow as a developer. Whether you're looking to hire for a full-time role or a freelance project — let's connect and create something impactful!
+  </p>
+
+  <label className="block mb-4">
+    <span className="text-gray-300 text-sm">Name</span>
+    <input
+      type="text"
+      name="name"
+      required
+      className="mt-1 block w-full rounded-md bg-gray-800 border border-gray-700 text-white px-4 py-2 focus:ring-2 focus:ring-indigo-600"
+    />
+  </label>
+
+  <label className="block mb-4">
+    <span className="text-gray-300 text-sm">Email</span>
+    <input
+      type="email"
+      name="email"
+      required
+      className="mt-1 block w-full rounded-md bg-gray-800 border border-gray-700 text-white px-4 py-2 focus:ring-2 focus:ring-indigo-600"
+    />
+  </label>
+
+  <label className="block mb-6">
+    <span className="text-gray-300 text-sm">Message</span>
+    <textarea
+      name="message"
+      required
+      className="mt-1 block w-full rounded-md bg-gray-800 border border-gray-700 text-white px-4 py-2 h-32 resize-none focus:ring-2 focus:ring-indigo-600"
+    />
+  </label>
+
+  <button
+    type="submit"
+    className="bg-indigo-600 hover:bg-indigo-700 transition text-white font-medium py-2 px-6 rounded-md"
+  >
+    Send Message
+  </button>
+</form>
+
       </div>
     </section>
   );
